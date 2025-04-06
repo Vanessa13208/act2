@@ -1,0 +1,665 @@
+/* App.css - Pink & White Theme */
+:root {
+  --rosa-principal: #400446;
+  --rosa-oscuro: #420947;
+  --rosa-claro: #570b66;
+  --rosa-pastel: #FFCCE5;
+  --blanco: #FFFFFF;
+  --gris-claro: #F9F3F7;
+  --gris-medio: #E8DEE6;
+  --gris-oscuro: #6D5D6E;
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: var(--gris-oscuro);
+  background-color: var(--gris-claro);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.header-perfumes {
+  background: linear-gradient(135deg, var(--rosa-principal), var(--rosa-oscuro));
+  color: var(--blanco);
+  padding: 1.5rem 2rem;
+  box-shadow: var(--sombra);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-container h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.logo-container p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.carrito-icono {
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.carrito-icono:hover {
+  transform: scale(1.1);
+}
+
+.carrito-icono span {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: var(--blanco);
+  color: var(--rosa-principal);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  padding: 2rem;
+  background-color: var(--blanco);
+}
+
+/* Store Section */
+.tienda-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.filtros {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: var(--gris-claro);
+  border-radius: 10px;
+}
+
+.filtros h2 {
+  color: var(--rosa-oscuro);
+  margin-bottom: 1rem;
+}
+
+.filtro-marca {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filtro-marca label {
+  font-weight: 500;
+}
+
+.filtro-marca select {
+  padding: 0.8rem;
+  border: 1px solid var(--gris-medio);
+  border-radius: 8px;
+  background-color: var(--blanco);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.filtro-marca select:focus {
+  outline: none;
+  border-color: var(--rosa-principal);
+}
+
+.lista-perfumes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.tarjeta-perfume {
+  background-color: var(--blanco);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  transition: all 0.3s ease;
+  border: 1px solid var(--gris-medio);
+}
+
+.tarjeta-perfume:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 102, 178, 0.2);
+  border-color: var(--rosa-claro);
+}
+
+.tarjeta-perfume img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.info-perfume {
+  padding: 1.5rem;
+}
+
+.info-perfume h3 {
+  font-size: 1.3rem;
+  color: var(--rosa-oscuro);
+  margin-bottom: 0.5rem;
+}
+
+.marca {
+  color: var(--gris-oscuro);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.descripcion {
+  font-size: 0.95rem;
+  color: var(--gris-oscuro);
+  margin-bottom: 1.5rem;
+}
+
+.precio {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--rosa-oscuro);
+  margin: 1.5rem 0;
+}
+
+.tamanos {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tamano-btn {
+  padding: 0.5rem 1rem;
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-medio);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tamano-btn:hover {
+  border-color: var(--rosa-principal);
+}
+
+.tamano-btn.seleccionado {
+  background-color: var(--rosa-principal);
+  color: var(--blanco);
+  border-color: var(--rosa-principal);
+}
+
+.boton-agregar {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: var(--rosa-principal);
+  color: var(--blanco);
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton-agregar:hover {
+  background-color: var(--rosa-oscuro);
+}
+
+/* Checkout Section */
+.pago-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: var(--blanco);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: var(--sombra);
+}
+
+.pago-container h2 {
+  color: var(--rosa-oscuro);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-columnas {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form-columna {
+  flex: 1;
+}
+
+.form-columna h3 {
+  color: var(--rosa-oscuro);
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--rosa-pastel);
+}
+
+.grupo-formulario {
+  margin-bottom: 1.5rem;
+}
+
+.grupo-formulario label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--gris-oscuro);
+}
+
+.grupo-formulario input,
+.grupo-formulario textarea,
+.grupo-formulario select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--gris-medio);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.grupo-formulario input:focus,
+.grupo-formulario textarea:focus,
+.grupo-formulario select:focus {
+  outline: none;
+  border-color: var(--rosa-principal);
+}
+
+.metodos-pago {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.metodo-pago {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid var(--gris-medio);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.metodo-pago:hover {
+  border-color: var(--rosa-claro);
+}
+
+.metodo-pago.seleccionado {
+  border-color: var(--rosa-principal);
+  background-color: rgba(255, 102, 178, 0.05);
+}
+
+.metodo-icono {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+}
+
+.metodo-icono img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.metodo-info h4 {
+  font-size: 1rem;
+  color: var(--rosa-oscuro);
+  margin-bottom: 0.3rem;
+}
+
+.metodo-info p {
+  font-size: 0.85rem;
+  color: var(--gris-oscuro);
+}
+
+.resumen-compra {
+  background-color: var(--gris-claro);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.resumen-compra h3 {
+  color: var(--rosa-oscuro);
+  margin-bottom: 1rem;
+}
+
+.resumen-detalles p {
+  margin-bottom: 0.5rem;
+}
+
+.resumen-detalles strong {
+  color: var(--rosa-oscuro);
+}
+
+.productos-carrito {
+  margin: 1rem 0;
+}
+
+.item-carrito {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--gris-medio);
+}
+
+.info-producto {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.info-producto img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.boton-eliminar {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.boton-eliminar:hover {
+  transform: scale(1.1);
+}
+
+.total-pago {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--gris-medio);
+  color: var(--rosa-oscuro);
+}
+
+.botones-pago {
+  display: flex;
+  gap: 1rem;
+}
+
+.boton-volver {
+  flex: 1;
+  padding: 0.9rem;
+  background-color: var(--blanco);
+  color: var(--rosa-principal);
+  border: 1px solid var(--rosa-principal);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.boton-volver:hover {
+  background-color: var(--rosa-pastel);
+}
+
+.boton-confirmar {
+  flex: 1;
+  padding: 0.9rem;
+  background-color: var(--rosa-principal);
+  color: var(--blanco);
+  border: none;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton-confirmar:hover {
+  background-color: var(--rosa-oscuro);
+}
+
+.boton-confirmar:disabled {
+  background-color: var(--gris-medio);
+  cursor: not-allowed;
+}
+
+/* Order Confirmation */
+.confirmacion-compra {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.tarjeta-confirmacion {
+  background-color: var(--blanco);
+  border-radius: 10px;
+  padding: 3rem;
+  box-shadow: var(--sombra);
+  text-align: center;
+}
+
+.confirmacion-icono {
+  width: 80px;
+  height: 80px;
+  background-color: var(--rosa-principal);
+  color: var(--blanco);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin: 0 auto 1.5rem;
+}
+
+.confirmacion-mensaje {
+  font-size: 1.1rem;
+  color: var(--gris-oscuro);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.detalles-pedido {
+  text-align: left;
+  background-color: var(--gris-claro);
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.detalles-pedido h3 {
+  color: var(--rosa-oscuro);
+  margin-bottom: 1.5rem;
+}
+
+.detalles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.detalles-grid div {
+  margin-bottom: 0.5rem;
+}
+
+.detalles-grid strong {
+  color: var(--rosa-oscuro);
+}
+
+.productos-titulo {
+  color: var(--rosa-oscuro);
+  margin: 2rem 0 1rem;
+}
+
+.productos-lista {
+  list-style: none;
+}
+
+.productos-lista li {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--gris-medio);
+}
+
+.productos-lista img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 1rem;
+}
+
+.total-final {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gris-medio);
+  color: var(--rosa-oscuro);
+}
+
+.boton-continuar {
+  padding: 0.9rem 2.5rem;
+  background-color: var(--rosa-principal);
+  color: var(--blanco);
+  border: none;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton-continuar:hover {
+  background-color: var(--rosa-oscuro);
+}
+
+/* Footer */
+.footer-perfumes {
+  background: linear-gradient(135deg, var(--rosa-principal), var(--rosa-oscuro));
+  color: var(--blanco);
+  padding: 3rem 2rem 2rem;
+  margin-top: auto;
+}
+
+.footer-contenido {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.footer-info p {
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.footer-contacto h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-contacto p {
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .form-columnas {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-perfumes {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .carrito-icono {
+    margin-top: 0.5rem;
+  }
+  
+  .lista-perfumes {
+    grid-template-columns: 1fr;
+  }
+  
+  .tarjeta-confirmacion {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 1rem;
+  }
+  
+  .productos-lista li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .productos-lista img {
+    margin-bottom: 1rem;
+  }
+  
+  .botones-pago {
+    flex-direction: column;
+  }
+}
